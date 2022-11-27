@@ -92,7 +92,7 @@ VALUES
 
 INSERT INTO songs
 (title,duration_in_seconds,
-release_date,artist1_id,artist2_id,album_id,producers1_id,producers2_id)
+release_date,artist1_id,artist2_id,album_name,producers1_id,producers2_id)
 VALUES
   ('MMMBop', 238, '04-15-1997',1,NULL,1,1, 2),
   ('Bohemian Rhapsody', 355, '10-31-1975', 2,NULL ,2, 3,NULL),
@@ -105,9 +105,13 @@ VALUES
   ('Complicated', 244, '05-14-2002', 14,NULL,9, 10,NULL),
   ('Say My Name', 240, '11-07-1999', 15,NULL, 10, 11,NULL);
 
--- select title,duration_in_seconds,release_date,artist_name,artist_name,album_name,producers_name,producers_name
--- from songs 
--- join artist on songs.artist1_id = artist.id
--- join album on songs.album_id=album.id
--- join producers on songs.producers1_id = producers.id
--- join artist on songs.artist2_id = artist.id;
+
+select title,duration_in_seconds,release_date,
+a.artist_name AS artist1,b.artist_name AS artist2,album_name,
+c.producers_name AS producer1,d.producers_name AS producer2
+from songs
+left join artist a on songs.artist1_id = a.id
+left join artist b on songs.artist2_id = b.id
+left join producers c on songs.producers1_id =c.id
+left join producers d on songs.producers2_id=d.id
+left join album on songs.album_id=album.id;
