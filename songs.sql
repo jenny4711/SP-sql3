@@ -92,7 +92,8 @@ VALUES
 
 INSERT INTO songs
 (title,duration_in_seconds,
-release_date,artist1_id,artist2_id,album_name,producers1_id,producers2_id)
+release_date,artist1_id,artist2_id,
+album_id,producers1_id,producers2_id)
 VALUES
   ('MMMBop', 238, '04-15-1997',1,NULL,1,1, 2),
   ('Bohemian Rhapsody', 355, '10-31-1975', 2,NULL ,2, 3,NULL),
