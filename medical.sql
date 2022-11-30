@@ -107,4 +107,12 @@ VALUES
 (2,1,1),
 (3,2,3);
 
+select doc_name,diag_name,dis_name,
+date,prescription
+from medical_record
+join medical_doc on medical_record.dr_id = medical_doc.id
+join diseases on medical_record.dis_id = diseases.id
+join diagnose on medical_record.dig_id = diagnose.id;
 
+
+ 
