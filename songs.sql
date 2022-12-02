@@ -116,3 +116,6 @@ left join artist b on songs.artist2_id = b.id
 left join producers c on songs.producers1_id =c.id
 left join producers d on songs.producers2_id=d.id
 left join album on songs.album_id=album.id;
+
+
+
